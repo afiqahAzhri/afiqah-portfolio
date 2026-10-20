@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiqah Azahari | Software Developer Portfolio</title>
+  
+  <!-- External Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="appearance.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="navbar">
+    <nav>
+      <a href="#" class="logo">Afiqah</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about"><span>01.</span> About</a></li>
+        <li><a href="#skills"><span>02.</span> Skills</a></li>
+        <li><a href="#projects"><span>03.</span> Projects</a></li>
+        <li><a href="#contact"><span>04.</span> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <span class="hero-greeting">Hi, my name is</span>
+    <h1 class="hero-name">Afiqah Azahari</h1>
+    <h2 class="hero-subtitle">I build software and web applications.</h2>
+    <p class="hero-desc">
+      I'm a Computer Science student passionate about crafting clean, dynamic web experiences and scalable backend solutions.
+    </p>
+    <a href="#projects" class="btn">Explore My Work</a>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Hello! I'm Afiqah, a software development student based in Malaysia. My journey into programming started when I first wanted to build custom modifications for games, which naturally led me into learning HTML, CSS, and JavaScript.
+        </p>
+        <p>
+          Fast-forward to today, I'm pursuing my degree while continuously building side projects, practicing algorithmic problem-solving, and building practical web tools.
+        </p>
+      </div>
+      <div class="about-image">
+        <div class="img-wrapper">
+          <img src="https://placehold.co/400x400/112240/64ffda?text=Afiqah+Profile" alt="Afiqah Azahari" onerror="this.src='https://placehold.co/400x400?text=Profile+Pic'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <h2 class="section-title"><span class="section-number">02.</span> Technical Skills</h2>
+    <div class="skills-grid">
+      
+      <!-- Languages -->
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-code"></i> Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+
+      <!-- Web Technologies -->
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-layer-group"></i> Web & Database</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Flexbox & Grid</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">DOM Manipulation</span>
+          <span class="skill-tag">Fetch API</span>
+          <span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Command Line</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">GitHub Pages</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2 class="section-title"><span class="section-number">03.</span> Featured Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div>
+          <div class="project-top">
+            <i class="fa-regular fa-folder folder-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              <a href="#" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Campus Task Manager</h3>
+          <p class="project-desc">
+            A practical web application designed for students to organize coursework deadlines, track priority assignments, and manage daily study schedules.
+          </p>
+        </div>
+        <div class="project-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div>
+          <div class="project-top">
+            <i class="fa-regular fa-folder folder-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              <a href="#" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Interactive Quiz Platform</h3>
+          <p class="project-desc">
+            A dynamic browser-based quiz game with timed questions, custom category selections, real-time score tracking, and local storage retention.
+          </p>
+        </div>
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>DOM API</span>
+          <span>CSS Flexbox</span>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div>
+          <div class="project-top">
+            <i class="fa-regular fa-folder folder-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              <a href="#" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Real-Time Weather App</h3>
+          <p class="project-desc">
+            A lightweight weather application fetching live meteorological data from external APIs to display current temperatures and multi-day forecasts.
+          </p>
+        </div>
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>Fetch API</span>
+          <span>CSS Grid</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title"><span class="section-number">04.</span> Get In Touch</h2>
+    <p class="contact-desc">
+      Whether you have a question, a project inquiry, or just want to connect, feel free to drop a message below!
+    </p>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+      </div>
+      <button type="submit" class="btn" id="submit-btn">Send Message</button>
+      <div class="form-message" id="form-status" role="alert"></div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/afiqah-azahari-519917213?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:fiqahzahari88@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+    </div>
+    <p>Designed & Built by Afiqah Azahari</p>
+  </footer>
+
+  <!-- External JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
