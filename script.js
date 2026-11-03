@@ -1,89 +1,293 @@
-/**
- * Personal Portfolio Website Script
- * Handles navigation bar scrolling effects, mobile menu interaction,
- * smooth scrolling, and contact form handling.
- */
 
-document.addEventListener('DOMContentLoaded', () => {
+// =========================
+// 1. SMOOTH SCROLLING
+// =========================
 
-  // 1. HEADER SCROLL SHADOW EFFECT
-  const navbar = document.getElementById('navbar');
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+    link.addEventListener("click", function(event) {
 
-  // 2. MOBILE HAMBURGER MENU TOGGLE
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    const icon = hamburger.querySelector('i');
-    
-    if (navLinks.classList.contains('active')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-xmark');
-    } else {
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
-  });
+        if (target) {
+            event.preventDefault();
 
-  // Close mobile drawer when clicking navigation links
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      const icon = hamburger.querySelector('i');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
     });
-  });
 
-  // 3. INTERACTIVE CONTACT FORM SUBMISSION
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-  const submitBtn = document.getElementById('submit-btn');
+});
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+// =========================
+// 2. TYPING ANIMATION
+// =========================
 
-      // Basic client-side validation check
-      if (!name || !email || !message) {
-        formStatus.textContent = 'Please fill out all fields.';
-        formStatus.className = 'form-message error';
-        return;
-      }
+const typingText = document.querySelector(".typing-text");
 
-      // UI visual feedback during submission
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
+const messages = [
+    "digital experiences.",
+    "creative solutions.",
+    "meaningful applications."
+];
 
-      // Simulate async network request
-      setTimeout(() => {
-        formStatus.textContent = 'Message sent successfully! Thank you.';
-        formStatus.className = 'form-message success';
-        
-        // Reset form inputs and restore button state
-        contactForm.reset();
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
+let messageIndex = 0;
+let characterIndex = 0;
+let deleting = false;
 
-        // Auto-hide success message after 5 seconds
-        setTimeout(() => {
-          formStatus.className = 'form-message';
-        }, 5000);
-      }, 1200);
+function typeEffect() {
+
+    if (!typingText) return;
+
+    const currentMessage = messages[messageIndex];
+
+    if (deleting) {
+        characterIndex--;
+    } else {
+        characterIndex++;
+    }
+
+    typingText.textContent = currentMessage.substring(
+        0, characterIndex
+    );
+
+    let speed = deleting ? 40 : 80;
+
+    if (!deleting && characterIndex === currentMessage.length) {
+        deleting = true;
+        speed = 1500;
+    }
+
+    else if (deleting && characterIndex === 0) {
+        deleting = false;
+
+        messageIndex = (messageIndex + 1) % messages.length;
+
+        speed = 400;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+
+// =========================
+// 3. SCROLL REVEAL
+// =========================
+
+const revealElements = document.querySelectorAll(
+    ".hero-content, .hero-image, .section"
+);
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+
+        }
+
     });
-  }
+
+}, {
+    threshold: 0.15
+});
+
+revealElements.forEach(element => {
+
+    element.classList.add("reveal");
+
+    observer.observe(element);
+
+});
+
+
+// ======================================
+// HAMBURGER MENU
+// ======================================
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+const closeMenu = document.getElementById("closeMenu");
+
+// Open mobile menu
+hamburger.addEventListener("click", function () {
+    navLinks.classList.add("active");
+});
+
+// Close mobile menu
+closeMenu.addEventListener("click", function () {
+    navLinks.classList.remove("active");
+});
+
+// Close menu after clicking navigation links
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+    });
+});
+
+// Close menu when pressing Escape
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        navLinks.classList.remove("active");
+    }
+});
+
+
+
+/* ==================================
+   PROJECT IMAGE GALLERY
+================================== */
+
+const projectCards = document.querySelectorAll(
+    ".project-view-link"
+);
+
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+
+const modalClose = document.getElementById("modalClose");
+const prevImage = document.getElementById("prevImage");
+const nextImage = document.getElementById("nextImage");
+const imageCounter = document.getElementById("imageCounter");
+
+let currentImages = [];
+let currentIndex = 0;
+
+
+// OPEN PROJECT GALLERY
+
+projectCards.forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        currentImages = this.dataset.images
+            .split(",")
+            .map(image => image.trim())
+            .filter(image => image.length > 0);
+
+        currentIndex = 0;
+
+        modalTitle.textContent = this.dataset.title;
+
+        showImage();
+
+        imageModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+// DISPLAY IMAGE
+
+function showImage() {
+
+    if (currentImages.length === 0) return;
+
+    modalImage.src = currentImages[currentIndex];
+
+    imageCounter.textContent =
+        `${currentIndex + 1} / ${currentImages.length}`;
+
+    // Hide navigation if only one image
+    const showNavigation = currentImages.length > 1;
+
+    prevImage.style.display = showNavigation ? "block" : "none";
+    nextImage.style.display = showNavigation ? "block" : "none";
+
+}
+
+
+// NEXT IMAGE
+
+nextImage.addEventListener("click", function () {
+
+    currentIndex++;
+
+    if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+
+    showImage();
+
+});
+
+
+// PREVIOUS IMAGE
+
+prevImage.addEventListener("click", function () {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    }
+
+    showImage();
+
+});
+
+
+// CLOSE POPUP
+
+function closeModal() {
+
+    imageModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+    modalImage.src = "";
+
+}
+
+
+// CLOSE BUTTON
+
+modalClose.addEventListener("click", closeModal);
+
+
+// CLICK OUTSIDE POPUP
+
+imageModal.addEventListener("click", function (event) {
+
+    if (event.target === imageModal) {
+        closeModal();
+    }
+
+});
+
+
+// KEYBOARD NAVIGATION
+
+document.addEventListener("keydown", function (event) {
+
+    if (!imageModal.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+        closeModal();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextImage.click();
+    }
+
+    if (event.key === "ArrowLeft") {
+        prevImage.click();
+    }
 
 });
