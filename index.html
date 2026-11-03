@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Afiqah Azahari | Software Developer Portfolio</title>
+  <title>Afiqah Azahari | Student Multimedia Computing Portfolio</title>
   
   <!-- External Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -24,7 +25,12 @@
         <i class="fa-solid fa-bars"></i>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about"><span>01.</span> About</a></li>
+        <li>
+         <!-- Close Button inside the mobile menu drawer -->
+      <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+       
+        </li>
+         <li><a href="#about"><span>01.</span> About</a></li>
         <li><a href="#skills"><span>02.</span> Skills</a></li>
         <li><a href="#projects"><span>03.</span> Projects</a></li>
         <li><a href="#contact"><span>04.</span> Contact</a></li>
@@ -33,35 +39,115 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero">
-    <span class="hero-greeting">Hello there, welcome to my portfolio!</span>
-    <h1 class="hero-name">Afiqah Azahari</h1>
-    <h2 class="hero-subtitle">I build software and web applications.</h2>
-    <p class="hero-desc">
-      I'm a Computer Science student passionate about crafting clean, dynamic web experiences and scalable backend solutions.
-    </p>
-    <a href="#projects" class="btn">Explore My Work</a>
-  </section>
+  
+<!-- HERO SECTION -->
+<section id="hero" class="hero"> 
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          Hello! I'm Afiqah, a software development student based in Malaysia. My journey into programming started when I first wanted to build custom modifications for games, which naturally led me into learning HTML, CSS, and JavaScript.
+    <div class="hero-content">
+
+
+        <h1 class="hero-name">
+            Afiqah Azahari
+        </h1>
+
+        <h2 class="hero-subtitle">
+            Building ideas into
+            <span class="typing-text"></span>
+        </h2>
+
+        <p class="hero-desc">
+            I'm a Multimedia Computing student at UNIMAS,
+            passionate about software development,
+            creative technology, and building meaningful
+            digital solutions.
         </p>
-        <p>
-          Fast-forward to today, I'm pursuing my degree while continuously building side projects, practicing algorithmic problem-solving, and building practical web tools.
+
+        <a href="#projects" class="btn">
+            Explore My Work →
+        </a>
+
+        <p class="hero-caption">
+            UNIMAS · MULTIMEDIA COMPUTING
         </p>
-      </div>
-      <div class="about-image">
-        <div class="img-wrapper">
-          <img src="https://placehold.co/400x400/112240/64ffda?text=Afiqah+Profile" alt="Afiqah Azahari" onerror="this.src='https://placehold.co/400x400?text=Profile+Pic'">
-        </div>
-      </div>
+
     </div>
-  </section>
+
+    <!-- PROFILE IMAGE -->
+    <div class="hero-image">
+
+        <div class="image-frame">
+            <img src="src/gambar1.jpeg"
+                 alt="Afiqah Azahari">
+        </div>
+
+        <div class="floating-tag tag-one">
+            ✦  Tech Enthusiast
+        </div>
+
+        <div class="floating-tag tag-two">
+            ✦  Creative Thinker
+        </div>
+
+    </div>
+
+</section>
+
+
+  
+<!-- ABOUT SECTION -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        <span class="section-number">01.</span>
+        About Me
+    </h2>
+
+    <div class="about-content">
+
+        <div class="about-text">
+
+            <p>
+                Hi, I'm Siti Nurafiqah Azahari,
+                a Multimedia Computing student at
+                Universiti Malaysia Sarawak (UNIMAS),
+                originally from Sabah, Malaysia.
+            </p>
+
+            <p>
+                My journey in technology began with a
+                fascination for how software can
+                transform ideas into reality. This
+                curiosity led me to pursue a degree in
+                Multimedia Computing, where I have been
+                honing my skills in web development,
+                programming, and digital design.
+            </p>
+
+            <p>
+                I enjoy combining creativity and technology
+                to develop functional, user-friendly digital
+                experiences. I'm always eager to explore new
+                technologies, strengthen my skills, and turn
+                ideas into practical solutions.
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <div class="img-wrapper">
+                <img src="src/gambar2.jpeg"
+                     alt="Afiqah Azahari"
+                     onerror="this.src='https://placehold.co/400x400?text=Profile+Pic'">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
   <!-- SKILLS SECTION -->
   <section id="skills">
@@ -72,11 +158,13 @@
       <div class="skill-card">
         <h3><i class="fa-solid fa-code"></i> Languages</h3>
         <div class="skill-tags">
-          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">C</span>
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Python</span>
+          <span class="skill-tag">PHP</span>
         </div>
       </div>
 
@@ -86,6 +174,7 @@
         <div class="skill-tags">
           <span class="skill-tag">Flexbox & Grid</span>
           <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">CSS3</span>
           <span class="skill-tag">DOM Manipulation</span>
           <span class="skill-tag">Fetch API</span>
           <span class="skill-tag">MySQL</span>
@@ -98,10 +187,14 @@
         <div class="skill-tags">
           <span class="skill-tag">Git & GitHub</span>
           <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Command Line</span>
+          <span class="skill-tag">Canva</span>
           <span class="skill-tag">Figma</span>
-          <span class="skill-tag">GitHub Pages</span>
+          <span class="skill-tag">Dev-C++</span>
           <span class="skill-tag">Android Studio</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Unity Hub</span>
+          <span class="skill-tag">Ionic Framework</span>
+
         </div>
       </div>
 
@@ -113,49 +206,121 @@
     <h2 class="section-title"><span class="section-number">03.</span> Featured Projects</h2>
     <div class="projects-grid">
 
-      <!-- Project 1 -->
-      <article class="project-card">
-        <div>
-          <div class="project-top">
-            <i class="fa-regular fa-folder folder-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-              <a href="#" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">Campus Task Manager</h3>
-          <p class="project-desc">
-            A practical web application designed for students to organize coursework deadlines, track priority assignments, and manage daily study schedules.
-          </p>
-        </div>
-        <div class="project-tags">
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-        </div>
-      </article>
+      
 
-      <!-- Project 2 -->
-      <article class="project-card">
-        <div>
-          <div class="project-top">
+<!-- PROJECT 1 -->
+<article class="project-card">
+
+    <div class="project-top">
+
+        <!-- CLICK TO VIEW REPORT -->
+        <a href="reports/G07MC-G12-SDG3.pdf"
+           class="folder-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="View Project Report"
+           aria-label="SDG3 Report">
+
             <i class="fa-regular fa-folder folder-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-              <a href="#" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">Interactive Quiz Platform</h3>
-          <p class="project-desc">
-            A dynamic browser-based quiz game with timed questions, custom category selections, real-time score tracking, and local storage retention.
-          </p>
-        </div>
-        <div class="project-tags">
-          <span>JavaScript</span>
-          <span>DOM API</span>
-          <span>CSS Flexbox</span>
-        </div>
-      </article>
+
+        </a>
+
+    </div>
+
+    <div class="project-content">
+
+        <h3 class="project-title">
+            SDG3 - Good Health and Well-being
+        </h3>
+
+        <p class="project-desc">
+            This project is a web-based educational application developed to raise awareness and promote Sustainable Development Goal 3 (SDG 3): Good Health and Well-being.
+            The application features an informative overview of global health targets and incorporates an interactive quiz game designed to test user understanding and reinforce
+             key concepts through active engagement.
+        </p>
+
+    </div>
+
+    <div class="project-tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+    </div>
+
+    <!-- CLICK CARD TO PREVIEW IMAGE -->
+    
+<button
+    type="button"
+    class="project-view-link"
+
+    data-title="SDG3 - Good Health and Well-being"
+
+    data-images="
+        src/image3.jpg,
+        src/image4.jpg,
+        src/image5.jpg
+    "
+
+    aria-label="Preview SDG3 project">
+</button>
+
+
+</article>
+
+
+<!-- PROJECT 2 -->
+<article class="project-card">
+
+    <div class="project-top">
+
+        <a
+           class="folder-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="View Project Report"
+           aria-label="Tetris Game ">
+
+            <i class="fa-regular fa-folder folder-icon"></i>
+
+        </a>
+
+    </div>
+
+    <div class="project-content">
+
+        <h3 class="project-title">
+            Tetris Game with OpenGL
+        </h3>
+
+        <p class="project-desc">
+            This project is a computer graphics application featuring a classic Tetris game built in a team using OpenGL. 
+            The application implements core graphical rendering principles, interactive grid-based block manipulation
+             and real-time game mechanics, showcasing teamwork and low-level graphics programming capabilities.
+        </p>
+
+    </div>
+
+    <div class="project-tags">
+        <span>OpenGL</span>
+    </div>
+
+    <button
+        type="button"
+        class="project-view-link"
+
+        data-title="Tetris Game with OpenGL"
+
+        data-images="
+            src/image6.jpeg,
+            src/image7.jpeg,
+            src/image8.jpeg
+        "
+
+        aria-label="Preview Tetris Game with OpenGL">
+    </button>
+
+</article>
+
 
       <!-- Project 3 -->
       <article class="project-card">
@@ -189,21 +354,22 @@
       Whether you have a question, a project inquiry, or just want to connect, feel free to drop a message below!
     </p>
 
-    <form class="contact-form" id="contact-form">
-      <div class="form-group">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+    <input type="hidden" name="access_key" value="c1857dc5-921a-49b6-a43c-0e2ddb1be1f0">
+      <div class="input-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required placeholder="Your Name">
       </div>
-      <div class="form-group">
+      <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required placeholder="your.email@example.com">
       </div>
-      <div class="form-group">
+      <div class="input-group">
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
       </div>
       <button type="submit" class="btn" id="submit-btn">Send Message</button>
-      <div class="form-message" id="form-status" role="alert"></div>
+      <div id="form-message" style="margin-top: 15px; font-weight: bold;"></div>
     </form>
   </section>
 
@@ -216,6 +382,54 @@
     </div>
     <p>Designed & Built by Afiqah Azahari</p>
   </footer>
+
+  
+
+<!-- PROJECT IMAGE POPUP -->
+
+<div class="image-modal" id="imageModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close"
+                id="modalClose"
+                aria-label="Close preview">
+            &times;
+        </button>
+
+        <h3 id="modalTitle">Project Preview</h3>
+
+        <!-- IMAGE DISPLAY -->
+        <div class="modal-image-container">
+
+            <button class="gallery-btn prev-btn"
+                    id="prevImage">
+                &#10094;
+            </button>
+
+            <img id="modalImage"
+                 src=""
+                 alt="Project screenshot">
+
+            <button class="gallery-btn next-btn"
+                    id="nextImage">
+                &#10095;
+            </button>
+
+        </div>
+
+        <!-- IMAGE COUNTER -->
+        <p class="image-counter" id="imageCounter">
+            1 / 3
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
 
   <!-- External JavaScript file -->
   <script src="script.js"></script>
