@@ -213,7 +213,7 @@ function showImage() {
 }
 
 
-// NEXT IMAGE
+//to the next image in the gallery hehehe
 
 nextImage.addEventListener("click", function () {
 
@@ -291,3 +291,82 @@ document.addEventListener("keydown", function (event) {
     }
 
 });
+
+/* ==========================================
+   DEVELOPER WORKSPACE JAVASCRIPT
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Automatically update the portfolio year
+
+    const yearElement =
+        document.getElementById("workspace-year");
+
+    if (yearElement) {
+        yearElement.textContent =
+            new Date().getFullYear();
+    }
+
+
+    // Typing animation for workspace status
+
+    const typingElement =
+        document.getElementById("workspace-typing");
+
+    if (!typingElement) return;
+
+    const words = [
+        "Software Development",
+        "Creative Technology",
+        "Web Development",
+        "UI/UX Design"
+    ];
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) return;
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+        const currentWord = words[wordIndex];
+
+        if (deleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex);
+
+        let speed = deleting ? 45 : 85;
+
+        if (!deleting && charIndex === currentWord.length) {
+
+            deleting = true;
+            speed = 1500;
+
+        } else if (deleting && charIndex === 0) {
+
+            deleting = false;
+
+            wordIndex =
+                (wordIndex + 1) % words.length;
+
+            speed = 400;
+        }
+
+        setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+
+});
+
