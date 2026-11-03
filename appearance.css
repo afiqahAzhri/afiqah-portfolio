@@ -496,6 +496,8 @@ padding: 25px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+text-align: justify;
+text-justify: inter-word;
 border: 1px solid var(--border-color);
 transition: var(--transition);
 }
@@ -967,6 +969,671 @@ width: 100px;
 
     .next-btn {
         right: 5px;
+    }
+
+}
+
+
+/* ==========================================
+   DEVELOPER WORKSPACE HERO
+========================================== */
+
+.workspace-hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 115px 7% 30px;
+
+    background: var(--bg-primary);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.workspace-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* TOP HEADER */
+
+.workspace-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--accent);
+
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--accent);
+}
+
+.workspace-logo {
+    font-weight: 700;
+    font-size: 17px;
+    color: white;
+}
+
+.logo-symbol {
+    color: var(--accent);
+    margin-right: 7px;
+}
+
+.workspace-year {
+    letter-spacing: 1.5px;
+}
+
+
+/* MAIN GRID */
+
+.workspace-main {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+
+    align-items: center;
+    gap: 55px;
+
+    min-height: 620px;
+
+    padding: 45px 0;
+}
+
+
+/* LEFT INTRODUCTION */
+
+.workspace-intro {
+    animation: workspaceFade 0.8s ease forwards;
+}
+
+.workspace-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--accent);
+    font-family: var(--font-code);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    margin-bottom: 28px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #b7e6a8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #b7e6a8;
+}
+
+.workspace-greeting {
+    color: var(--accent);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.workspace-intro h1 {
+    color: white;
+
+    font-size: clamp(45px, 5.5vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.workspace-intro h1 span {
+    color: var(--accent);
+}
+
+.workspace-description {
+    max-width: 450px;
+
+    color: #F9E5EC;
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* BUTTONS */
+
+.workspace-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin-bottom: 50px;
+}
+
+.workspace-btn {
+    background: var(--accent);
+    color: #345D33;
+
+    padding: 13px 20px;
+
+    border-radius: 5px;
+
+    font-family: var(--font-code);
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.workspace-btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.workspace-link {
+    color: white;
+    font-size: 13px;
+}
+
+.workspace-link:hover {
+    color: var(--accent);
+}
+
+
+/* BOTTOM INFORMATION */
+
+.workspace-bottom-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    font-family: var(--font-code);
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    color: var(--accent);
+}
+
+
+/* ==========================================
+   BROWSER WINDOW
+========================================== */
+
+.workspace-visual {
+    position: relative;
+    animation: workspaceFade 1s ease forwards;
+}
+
+.browser-window {
+    position: relative;
+    z-index: 1;
+
+    background: #f8edf1;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 15px 20px 45px rgba(25, 50, 24, 0.3);
+
+    transform: rotate(1deg);
+    transition: var(--transition);
+}
+
+.browser-window:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+
+/* BROWSER HEADER */
+
+.browser-header {
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    background: #ead7df;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.browser-dots span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+    background: #d86c89;
+}
+
+.browser-dots span:nth-child(2) {
+    background: #d9ae68;
+}
+
+.browser-dots span:nth-child(3) {
+    background: #588A45;
+}
+
+.browser-address {
+    background: #fff8fa;
+
+    padding: 5px 20px;
+    border-radius: 5px;
+
+    color: #588A45;
+    font-family: var(--font-code);
+    font-size: 10px;
+}
+
+.browser-menu {
+    color: #588A45;
+    font-size: 14px;
+}
+
+
+/* BROWSER BODY */
+
+.browser-content {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+
+    min-height: 380px;
+}
+
+
+/* SIDEBAR */
+
+.browser-sidebar {
+    background: #345D33;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    padding-top: 25px;
+}
+
+.sidebar-icon {
+    color: #c5d7bd;
+    font-size: 15px;
+}
+
+.sidebar-icon.active {
+    color: var(--accent);
+}
+
+
+/* MAIN BROWSER CONTENT */
+
+.browser-main-content {
+    padding: 25px 20px;
+    color: #345D33;
+}
+
+
+/* MINI PROFILE */
+
+.mini-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5d1d9;
+}
+
+.mini-profile img {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid #d86c89;
+}
+
+.mini-profile div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mini-profile strong {
+    font-size: 13px;
+    color: #345D33;
+}
+
+.mini-profile span {
+    font-size: 10px;
+    color: #789174;
+}
+
+
+/* MINI HEADING */
+
+.mini-heading {
+    padding: 20px 0;
+}
+
+.mini-heading > span {
+    color: #d86c89;
+    font-family: var(--font-code);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.mini-heading h3 {
+    font-size: clamp(19px, 2.2vw, 27px);
+    margin: 8px 0;
+    color: #345D33;
+}
+
+.mini-heading p {
+    color: #71816c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   CODE EDITOR
+========================================== */
+
+.code-window {
+    background: #24452d;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+
+    background: #1c3825;
+
+    padding: 9px 12px;
+
+    color: #fed5e7;
+    font-family: var(--font-code);
+    font-size: 9px;
+}
+
+.code-content {
+    padding: 12px;
+
+    color: #e9f2e6;
+
+    font-family: var(--font-code);
+    font-size: clamp(8px, 1vw, 11px);
+    line-height: 1.9;
+}
+
+.code-indent {
+    padding-left: 20px;
+}
+
+.code-purple {
+    color: #d6a8ff;
+}
+
+.code-blue {
+    color: #9bd6ff;
+}
+
+.code-pink {
+    color: #f4a9c4;
+}
+
+
+/* BROWSER FOOTER */
+
+.browser-footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px 15px;
+
+    background: #ead7df;
+
+    font-family: var(--font-code);
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    color: #588A45;
+}
+
+
+/* ==========================================
+   FLOATING STATUS CARD
+========================================== */
+
+.workspace-floating-card {
+    position: absolute;
+
+    right: -35px;
+    bottom: -25px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    background: var(--accent);
+    color: #345D33;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    animation: floatingCard 3s ease-in-out infinite;
+}
+
+.floating-icon {
+    font-size: 23px;
+}
+
+.workspace-floating-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.workspace-floating-card strong {
+    font-size: 11px;
+}
+
+.workspace-floating-card span:last-child {
+    font-size: 10px;
+}
+
+
+/* DECORATION */
+
+.workspace-decoration {
+    position: absolute;
+
+    top: -25px;
+    right: -15px;
+
+    color: var(--accent);
+
+    font-family: var(--font-code);
+    font-size: 11px;
+
+    transform: rotate(8deg);
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.workspace-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--accent);
+
+    color: var(--accent);
+
+    font-family: var(--font-code);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.workspace-footer a {
+    color: var(--accent);
+}
+
+.workspace-footer a:hover {
+    color: white;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes workspaceFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatingCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .workspace-hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .workspace-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .workspace-floating-card {
+        right: -10px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .workspace-hero {
+        padding: 105px 6% 25px;
+    }
+
+    .workspace-main {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding: 50px 0;
+    }
+
+    .workspace-intro h1 {
+        font-size: clamp(43px, 11vw, 65px);
+    }
+
+    .workspace-description {
+        font-size: 14px;
+    }
+
+    .workspace-buttons {
+        margin-bottom: 30px;
+    }
+
+    .workspace-visual {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    .browser-content {
+        min-height: 340px;
+    }
+
+    .browser-main-content {
+        padding: 18px 12px;
+    }
+
+    .workspace-floating-card {
+        right: -12px;
+        bottom: -35px;
+        padding: 10px 12px;
+    }
+
+    .workspace-footer {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 8px;
+    }
+
+    .workspace-footer span:last-child {
+        display: none;
+    }
+
+    .workspace-decoration {
+        right: -5px;
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .workspace-intro,
+    .workspace-visual {
+        animation: none;
+    }
+
+    .workspace-floating-card {
+        animation: none;
     }
 
 }
